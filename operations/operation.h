@@ -1,6 +1,5 @@
-#ifndef OPERATION_H
-#define OPERATION_H
-
+#ifndef OPERATION_H 
+#define OPERATION_H 
 #include <string>
 #include <iostream>
 #include <stack>
@@ -9,7 +8,10 @@ using namespace std;
 
 class Operation {
     protected:
-        string equation;
+        std::string equation;
+				int weight;
+				Operation* left;
+				Operation* right;
 
     public:
         static Operation* buildFromEquation(string equation);
