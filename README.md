@@ -1,3 +1,10 @@
 # Solver
 
-There are tests included for the basic equations except with variables
+## Weights
+
+type | weight
+-- | --
+number  | 1
++  | 2
+- | 2
+/ | 3 
