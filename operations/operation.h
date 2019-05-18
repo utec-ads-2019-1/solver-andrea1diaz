@@ -7,7 +7,7 @@
 using namespace std;
 
 class Operation {
-    protected:
+    public:
         std::string equation;
 				int weight;
 				Operation* left;
