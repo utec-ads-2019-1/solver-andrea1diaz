@@ -9,13 +9,17 @@ using namespace std;
 class Operation {
     protected:
         std::string equation;
-				int weight;
+				int data;
+				char op;
 				Operation* left;
 				Operation* right;
 
     public:
-				Operation (Operation* left, Operation* right) : left(left) , right(right) {};
         static Operation* buildFromEquation(string equation);
+
+				Operation(int data, char op): left(NULL), right(NULL), data(data), op(op) {};
+
+				Operation(Operation* left, Operation* right) : left(left), right(right) {};
 
         inline string name() { return equation; }
 

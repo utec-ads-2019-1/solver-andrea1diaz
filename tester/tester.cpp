@@ -33,7 +33,7 @@ void Tester::execute() {
     for (int i = 0; i < 1; ++i) {
 				std::cout << "$" << equations[i] << std::endl;
         Operation* root = Operation::buildFromEquation(equations[i]);
-        // float respuesta = root->operate();
+        float respuesta = root->operate();
         // ASSERT(respuesta == results[i], "The solver is not working");
         // cout << "Equation(" << i + 1 << ") solved" << endl;
     }
