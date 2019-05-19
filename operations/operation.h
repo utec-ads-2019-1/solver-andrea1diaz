@@ -7,13 +7,14 @@
 using namespace std;
 
 class Operation {
-    public:
+    protected:
         std::string equation;
 				int weight;
 				Operation* left;
 				Operation* right;
 
     public:
+				Operation (Operation* left, Operation* right) : left(left) , right(right) {};
         static Operation* buildFromEquation(string equation);
 
         inline string name() { return equation; }
