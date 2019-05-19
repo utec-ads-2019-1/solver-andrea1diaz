@@ -17,6 +17,8 @@ class Operation {
     public:
         static Operation* buildFromEquation(string equation);
 
+				Operation() : left(NULL), right(NULL) {};
+
 				Operation(int data, char op): left(NULL), right(NULL), data(data), op(op) {};
 
 				Operation(Operation* left, Operation* right) : left(left), right(right) {};
