@@ -8,22 +8,21 @@ using namespace std;
 
 class Operation {
     protected:
-        std::string equation;
-				int data;
-				char op;
+        std::string entry;
+				int tooperate;
 				Operation* left;
 				Operation* right;
 
     public:
-        static Operation* buildFromEquation(string equation);
+        static Operation* buildFromEquation(std::string entry);
 
 				Operation() : left(NULL), right(NULL) {};
 
-				Operation(int data, char op): left(NULL), right(NULL), data(data), op(op) {};
+				Operation(int tooperate): tooperate(tooperate) {};
 
 				Operation(Operation* left, Operation* right) : left(left), right(right) {};
 
-        inline string name() { return equation; }
+        inline string name() { return entry; }
 
         virtual float operate() = 0;
 };
