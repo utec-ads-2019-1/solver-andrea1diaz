@@ -2,7 +2,7 @@
 
 void Tester::execute() {
     string equations[] = {
-      "1+1"
+      "1+2"
         // "7/4*((3+1)*3)+3",
         // "7/4*((2+-+--8)*2)+3",
         // "2+(3)",
@@ -16,7 +16,7 @@ void Tester::execute() {
     };
 
     float results[] = {
-      2
+      3
         // 24,
         // -18,
         // 5,
@@ -30,9 +30,10 @@ void Tester::execute() {
     };
 
     const unsigned int size = sizeof(equations) / sizeof(string);
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < 1; ++i) {
+				std::cout << "$" << equations[i] << std::endl;
         Operation* root = Operation::buildFromEquation(equations[i]);
-        // float respuesta = root->operate();
+        float respuesta = root->operate();
         // ASSERT(respuesta == results[i], "The solver is not working");
         // cout << "Equation(" << i + 1 << ") solved" << endl;
     }
