@@ -5,8 +5,6 @@ class Plus : public Operation {
 		Plus (Operation* left, Operation*	right) : Operation(left, right) {}
 
 		virtual float operate() {
-			//float op = left->operate() + right->operate();
-			std::cout << "aqui" << &left << std::endl;
 			return left->operate() + right->operate();
 		}
 };
@@ -52,7 +50,8 @@ class Exponent : public Operation {
 				result *= left->operate();
 			}
 		
-		return result;
+			return result;
+		}
 };
 
 
