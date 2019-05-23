@@ -33,6 +33,7 @@ class GetOperations {
 
 
 		static Operation* number(std::string entry) {
+			std::cout << "number->" << entry << std::endl;
 			return new Constant(entry);
 		}
 };

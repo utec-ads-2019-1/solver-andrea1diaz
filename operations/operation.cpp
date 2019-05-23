@@ -14,7 +14,6 @@ int is_op(std::string entry, char op) {
 	for (int i = 0; i < entry.length(); ++i) {
 		if (entry[i] == '(')  {
 			p_count ++;
-			return i;
 		}
 
 		else if (entry[i] == ')') p_count --;
@@ -94,19 +93,14 @@ std::vector<int> parentheses_check(std::string entry) {
 
 Operation* Operation::buildFromEquation(std::string entry) {
 	entry = sign_add(entry);
-
 	for (int i = 0; i < 5	; ++i) {
-		char operation = operations[i];
-		int pos = is_op(entry, operation);
-		vector<int> parentheses = parentheses_check(entry);
-		
+		char operation = operations[i]; int pos = is_op(entry, operation); vector<int> parentheses = parentheses_check(entry); 
 		if (pos != 0) {
 			Operation* left = Operation::buildFromEquation(entry.substr(0, pos));
 			Operation* right = Operation::buildFromEquation(entry.substr(pos + 1, entry.length()));
 			return GetOperations::GetOperation (operation, left, right);
 		}
 	}
-
 
 	for (int i = 0; i < 1; ++i) {
 		char sign = signs[i];
@@ -118,8 +112,10 @@ Operation* Operation::buildFromEquation(std::string entry) {
 		}
 	}
 
-	if (entry[0] == '(' && entry[entry.length() - 1] == ')')
+	if (entry[0] == '(' && entry[entry.length() - 1] == ')') {
+		cout << "what->" << entry << endl;
 		return Operation::buildFromEquation(entry.substr(1, entry.length() - 1));
+	}
 	
 	return GetOperations::number(entry);
 
