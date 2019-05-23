@@ -2,27 +2,27 @@
 #define OPERATION_H 
 #include <string>
 #include <iostream>
-#include <stack>
+#include <vector>
 
 using namespace std;
 
 class Operation {
     protected:
-        std::string entry;
+        std::string equation;
 				int tooperate;
 				Operation* left;
 				Operation* right;
 
     public:
-        static Operation* buildFromEquation(std::string entry);
+        static Operation* buildFromEquation(std::string equation);
 
 				Operation() : left(NULL), right(NULL) {};
 
-				Operation(int tooperate): tooperate(tooperate) {};
+				Operation(std::string equation): equation(equation), left(NULL), right(NULL) {};
 
 				Operation(Operation* left, Operation* right) : left(left), right(right) {};
 
-        inline string name() { return entry; }
+        inline string name() { return equation; }
 
         virtual float operate() = 0;
 };
