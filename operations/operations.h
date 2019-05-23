@@ -55,3 +55,12 @@ class Exponent : public Operation {
 };
 
 
+class Change : public Operation {
+	public: 
+		Change (Operation* left) : Operation (left, NULL) {}
+		
+		virtual float operate() {
+			return -1 * left->operate();
+		}
+};
+
