@@ -2,7 +2,7 @@
 
 void Tester::execute() {
     string equations[] = {
-      "1*2",
+      "1*(2+(4))",
        "7/4*((3+1)*3)+3",
         // "7/4*((2+-+--8)*2)+3",
        "2+(3)"
@@ -16,7 +16,7 @@ void Tester::execute() {
     };
 
     float results[] = {
-      2,
+      6,
       24,
         // -18,
       5
