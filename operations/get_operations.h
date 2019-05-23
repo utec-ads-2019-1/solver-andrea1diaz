@@ -27,6 +27,11 @@ class GetOperations {
 		}
 
 
+		static Operation* ChangeSign(Operation* left) {
+			return new Change(left);
+		}
+
+
 		static Operation* number(std::string entry) {
 			return new Constant(entry);
 		}

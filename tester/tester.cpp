@@ -2,10 +2,10 @@
 
 void Tester::execute() {
     string equations[] = {
-      "1*2"
-        // "7/4*((3+1)*3)+3",
+      "1*2",
+       "7/4*((3+1)*3)+3",
         // "7/4*((2+-+--8)*2)+3",
-        // "2+(3)",
+       "2+(3)"
         // "7/4*((1+2)^4*2)+3",
         // "7*-1",
         // "1-2*5/2+1-2^4+1",
@@ -16,10 +16,10 @@ void Tester::execute() {
     };
 
     float results[] = {
-      2
-        // 24,
+      2,
+      24,
         // -18,
-        // 5,
+      5
         // 286.5,
         // -7,
         // -18,
@@ -30,7 +30,7 @@ void Tester::execute() {
     };
 
     const unsigned int size = sizeof(equations) / sizeof(string);
-    for (int i = 0; i < 1; ++i) {
+    for (int i = 0; i < size; ++i) {
 				std::cout << "$" << equations[i] << std::endl;
         Operation* root = Operation::buildFromEquation(equations[i]);
         float respuesta = root->operate();
